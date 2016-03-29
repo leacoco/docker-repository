@@ -1,0 +1,6 @@
+PORTS = -p 8080:80
+
+VOLUMES = -v /home/leadel/logs:/var/log
+
+ENV = \
+  -e FIRSTNAME=LEADEL

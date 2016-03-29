@@ -1,7 +1,7 @@
-FROM busybox
-ENV FIRSTNAME Leadel
-ENV SECONDNAME Ngalame
-ADD bar /bar
-WORKDIR /bar
-ENTRYPOINT ["top", "-b"]
-CMD ["-c"]
+FROM devsoftcom/busybox
+
+COPY run.sh /usr/local/bin/
+##CMD ["/usr/local/bin/run.sh"]
+
+VOLUME ["/data", "/var/softcom"]
+
