@@ -5,3 +5,9 @@ COPY run.sh /usr/local/bin/
 
 VOLUME ["/data", "/var/softcom"]
 
+ENV FIRSTNAME Leacoco
+ENV SECONDNAME Nobody
+ADD bar /bar
+WORKDIR /bar
+ENTRYPOINT ["top", "-b"]
+CMD ["-c"]
