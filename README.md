@@ -92,7 +92,7 @@ libreoffice() {
 
  #################################### A sample shell script ####################
 
- # find the Public Ip address:
+ ## find the Public Ip address:
 
  alias myip='curl -s "http://checkip.dyndns.org/" | egrep -o "[0-9]*\.[0-9]*\.[0-9]*\.[0-9]*"| head -1'
  ## set the env variable accourding to public ip
@@ -112,7 +112,7 @@ libreoffice() {
  fi
 
 
-#### Docker compose tips for scripting
+## Docker compose tips for scripting
 
 if [ "$OPERATION" = "build" ]; then
 	CMD="docker-compose -p plattform -f $FILE build $COMPONENT"
