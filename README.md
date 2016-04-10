@@ -62,14 +62,14 @@ document_server() {
 
 		browser-exec "http://127.0.0.1:1234/"
 }
-
+```
 http() {
 	docker run -t --rm \
 		-v /var/run/docker.sock:/var/run/docker.sock \
 		--log-driver none \
 		jess/httpie "$@"
 }
-
+```
 
 libreoffice() {
 	docker_del_stopped libreoffice
@@ -93,7 +93,7 @@ libreoffice() {
 
  alias myip='curl -s "http://checkip.dyndns.org/" | egrep -o "[0-9]*\.[0-9]*\.[0-9]*\.[0-9]*"| head -1'
  ## set the env variable accourding to public ip
-
+```
  case $(myip) in 
  	x.x.x.x ) SERVER="dev";;
  	y.y.y.y ) SERVER="live";;
@@ -107,7 +107,7 @@ libreoffice() {
  		docker build -t myapp:$1
  		docker tag -f myapp:$1 myapp:latest
  fi
-
+```
 
 #### Docker compose tips for scripting
 ```
