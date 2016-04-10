@@ -1,13 +1,14 @@
 This is a bash script for helper functions to use in Docker
 Some kind of Docker Housekeeping
 
-
+```
 dockerCleanup() {
 	docker rm $(docker ps --filter status=exited -q 2>/dev/null) 2>/dev/null
 
 	docker rmi $(docker images --filter dangling=true -q 2>/dev/null) 2>/dev/null
 }
-
+```
+```
 docker_del_stopped() {
 	local name=$1
 	local state=$(docker inspect --format "{{.State.Running}}" $name 2>/dev/null)
@@ -16,7 +17,8 @@ docker_del_stopped() {
 		docker rm $name
 	fi
 }
-
+```
+```
 docker_Relies_on() {
 	local containers=$@
 
@@ -29,15 +31,16 @@ docker_Relies_on() {
 		fi
 	done
 }
-
+```
 ##container aliases
-
+```
 apt_file() {
 	docker run --rm -it --name apt-file jess/apt-file
 }
 
 alias apt-file="apt_file"
-
+```
+```
 container_advisor() {
 	docker run -d \
 		-v /:/rootfs:ro \
@@ -50,7 +53,8 @@ container_advisor() {
 
 		browser-exec "http://127.0.0.1:1212"
 }
-
+```
+```
 document_server() {
 	docker_del_stopped documentserver
 
@@ -62,6 +66,7 @@ document_server() {
 
 		browser-exec "http://127.0.0.1:1234/"
 }
+```
 ```
 http() {
 	docker run -t --rm \
