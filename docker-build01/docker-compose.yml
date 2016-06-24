@@ -1,0 +1,6 @@
+sayname.test:
+  image: sayname:latest
+  container_name: mysayname
+  volumes:
+    - /mnt/docker-storage/build01/mydata:/var/log
+  restart: always
