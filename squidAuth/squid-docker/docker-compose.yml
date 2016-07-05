@@ -1,0 +1,8 @@
+Squid:
+  image: reflex-docker-hub.hannover-re.com/squid:1.0
+  ports:
+    - "3128:3128"
+  volumes:
+    - /mnt/docker-storage/storage/squid_storage:/var/spool/squid3
+    - /mnt/docker-storage/storage/squid_storage/log_files:/var/log/squid3
+  restart: always
