@@ -1,0 +1,14 @@
+
+
+It depends on your OS. Here are the few locations, with commands for few Operating Systems:
+
+    Ubuntu - /var/log/upstart/docker.log
+    Boot2Docker - /var/log/docker.log
+    Debian GNU/Linux - /var/log/daemon.log
+    CentOS - /var/log/daemon.log | grep docker
+    CoreOS - journalctl -u docker.service
+    Fedora - journalctl -u docker.service
+    Red Hat Enterprise Linux Server - /var/log/messages | grep docker
+    OpenSuSE - journalctl -u docker.service
+    OSX - ~/Library/Containers/com.docker.docker/Data/com.docker.driver.amd64-linux/log/d‌​ocker.log
+
