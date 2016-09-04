@@ -1,0 +1,25 @@
+Docker application.
+
+First i will show you how we design and organise our Directory structure.
+
+/application
+/logs
+/files
+Dockerfile
+fig.yml.example
+docker-compose.yml.example
+Makefile
+
+/application = the root directory of our application
+
+/logs for development purposes
+/files for development purpose. Both logs and files directory are omitted by git and completly excluded on production. They are there for application to write logs and files.
+
+
+Dockerfile is the file jenkins uses to build the image. A developer will almost never have to interact with this file
+
+*.yml.example file: These are the files the developer uses to start the application. These files are not use in production. When a developer clones a project. he needs to copy the example file and fill it with values.
+
+Makefile: use to have a standard set of commands for all application and at the same time, hide all kind of complexities to the developer.
+
+
