@@ -1,6 +1,6 @@
 include env_make
 NS = devsoftcom
-Version = latest
+VERSION = latest
 
 REPO = testmakefile
 NAME = alpine-javatest
@@ -9,13 +9,13 @@ INSTANCE = default
 .PHONY: build push
 
 build:	Dockerfile
-		docker build -t $(NS)/$(REPO):$(Version) .
+		docker build -t $(NS)/$(REPO):$(VERSION) .
 
 push: push
-		docker push $(NS)/$(REPO):$(Version)
+		docker push $(NS)/$(REPO):$(VERSION)
 
 run: run
-		docker run -i -d --name=$(NAME) $(NS)/$(REPO):$(Version)
+		docker run -i -d --name=$(NAME) $(NS)/$(REPO):$(VERSION)
 
-clean: 
-		docker rm -f $(docker ps -aq) 
+clean:
+		docker rm -f $(docker ps -aq)
